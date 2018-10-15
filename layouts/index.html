@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ $.Site.Language }}">
 <head>
 	{{ partial "head.html" . }}
 </head>
@@ -7,7 +7,7 @@
 	{{ if .Site.Params.header.enable }}
 		{{ partial "header.html" . }}
 	{{ end }}
-	{{ range $section := .Site.Params.sections }}
+	{{ range $section := .Site.Params.homepage.sections }}
     	{{ range $sectiontype, $element := $section }}
     		{{ $path := $sectiontype | printf "%s.html" }}
     		{{ $langdata := printf "sections-%s" $.Site.Language }}
