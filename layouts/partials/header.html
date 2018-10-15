@@ -8,9 +8,9 @@
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            {{ range $.Site.Home.AllTranslations }}
+              <span class="icon-bar"><a href="{{ .Permalink }}"><img width="18px" src="{{ .Site.BaseURL }}img/{{ .Language }}-flag.png"/></a></span>
+            {{ end }}            
             </button>
             <a class="navbar-brand" href="{{ .Site.BaseURL }}">
               <img src="{{ .Site.BaseURL }}{{ .Site.Params.header.logo }}" alt="{{ .Title }} Logo">
