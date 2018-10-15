@@ -1,31 +1,56 @@
 <!-- START form.html -->
-<section id="call-to-action" style="background-color: {{ .backgroundcolor }}">
+{{ $styling := "" }}
+{{ if .backgroundcolor }}
+  {{ $styling = .backgroundcolor | printf "background-color: %s; " }}
+{{ end }}
+{{ if .backgroundimage }}
+   {{ $styling = .backgroundimage | printf "%s background: url(%s) no-repeat; background-size: cover;" $styling }}
+{{ end }}
+<section class="form" style="{{ $styling | safeCSS }}">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="block">
-          <h2>{{ .title }}</h2>
-          <p>{{ .subtitle }}</p>
-          <div id="contact-form">
-            <form action="{{ .action }}">
+          <div class="section-title">
+            <h2>{{ .title }}</h2>
+            <p>{{ .subtitle }}</p>
+          </div>
+          <div class="modal" id="formSubmitted">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Form submitted!</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  Thanks for submitting the form; we'll get back to you shortly.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;">
+            </iframe>
+            <form action="{{ .action }}" method="post" target="hidden_iframe">
               <div class="block">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="{{ .nameid }}" placeholder="{{ .form.name }}">
+                      <input type="text" class="form-control" name="{{ .nameid }}" placeholder="{{ .name }}">
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control" name="{{ .emailid }}" placeholder="{{ .form.email }}">
+                      <input type="text" class="form-control" name="{{ .emailid }}" placeholder="{{ .email }}">
                     </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="{{ .subjectid }}" placeholder="{{ .form.subject }}">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
                     <div class="form-group-2">
                       <textarea class="form-control" rows="3" name="{{ .messageid }}" placeholder="{{ .message }}"></textarea>
                     </div>
-                    <button class="btn btn-default" type="submit">{{ .button }}</button>
+                    {{ if $.Site.Params.integrations.recapcha }}
+                      <div class="g-recaptcha" data-sitekey="{{ $.Site.Params.integrations.recapcha}}"></div>
+                    {{ end }}
+                    <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit">{{ .button }}</button>
                   </div>
               </div>
             </form>

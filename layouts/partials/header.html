@@ -13,12 +13,12 @@
             <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-              <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Title }} Logo">
+              <img src="{{ .Site.BaseURL }}{{ .Site.Params.header.logo }}" alt="{{ .Title }} Logo">
             </a>
           </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ .Site.BaseURL }}">{{ .Site.Params.home }}</a></li>
+                <li><a href="{{ .Site.BaseURL }}"></a></li>
               {{ range .Site.Menus.header }}
                 <li><a href="{{ .URL }}/">{{ .Name }}</a></li>
               {{ end }}

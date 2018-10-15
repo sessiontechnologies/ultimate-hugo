@@ -4,6 +4,24 @@
 <meta name="description" content="{{ .Title }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Metadata -->
+<meta name="author" content="{{ .Site.Params.meta.author }}">
+<meta name="description" content="{{ .Site.Params.meta.description }}">
+
+<meta property="og:description" content="{{ .Site.Params.meta.description }}">
+<meta property="og:url" content="{{ .Site.BaseURL }}">
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.header.logo }}">
+<meta property="og:locale" content="{{ .Site.LanguageCode }}">
+
+<meta name="twitter:title" content="{{ .Site.Title }}">
+<meta name="twitter:description" content="{{ .Site.Params.meta.description }}">
+<meta name="twitter:card" content="summary"> 
+
+<meta property="st:title" content="{{ .Site.Title }}">
+<meta property="st:image" content="{{ .Site.BaseURL }}{{ .Site.Params.header.logo }}">
+
 <title>{{ .Title }}</title>
 
 {{ .Hugo.Generator }}
@@ -22,3 +40,8 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/ultimate.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" />
 <!-- END head.html -->
+
+<!-- ReCapcha -->
+{{ if $.Site.Params.integrations.recapcha }}
+  <script src='https://www.google.com/recaptcha/api.js?render={{ .Site.Params.integrations.recapcha }}'></script>
+{{ end }}
