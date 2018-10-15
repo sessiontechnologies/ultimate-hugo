@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	{{ partial "head.html" . }}
+
+</head>
+<body>
+	{{ if .Site.Params.header.enable }}
+		{{ partial "header.html" . }}
+	{{ end }}
+
+	{{ range $pageblock := .Site.Params.pageblocks }}
+    	{{ range $sectiontype, $element := $pageblock }}
+    		{{ $path := $sectiontype | printf "%s.html" }}
+    		{{ $sectiondata := index $.Site.Data.data $sectiontype }}
+    		{{ $blockdata := index $sectiondata $element }}
+    		{{ partial $path $blockdata }}
+    	{{ end }}
+    {{ end }}
+
+	{{ if .Site.Params.footer.enable }}
+		{{ partial "footer.html" . }}
+	{{ end }}
+
+	{{ partial "js-libs.html" . }}
+</body>
+</html>
