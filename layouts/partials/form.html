@@ -1,11 +1,11 @@
 <!-- START form.html -->
-<section id="call-to-action">
+<section id="call-to-action" style="background-color: {{ .backgroundcolor }}">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="block">
           <h2>{{ .title }}</h2>
-          <p>{{ .paragraph }}</p>
+          <p>{{ .subtitle }}</p>
           <div id="contact-form">
             <form action="{{ .action }}">
               <div class="block">

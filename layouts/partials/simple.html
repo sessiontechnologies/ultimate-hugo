@@ -1,5 +1,5 @@
 <!-- START simple.html -->
-<section id="intro">
+<section id="intro" style="background-color: {{ .backgroundcolor }}">
   <div class="container">
     <div class="row">
       <div class="col-md-7 col-sm-12">
@@ -13,7 +13,7 @@
       </div>
       <div class="col-md-5 col-sm-12">
         <div class="block">
-          <img src="img/wrapper-img.png" alt="Img">
+          <img src="{{ .image }}" alt="Img">
         </div>
       </div>
     </div>

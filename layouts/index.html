@@ -10,8 +10,8 @@
 		{{ partial "header.html" . }}
 	{{ end }}
 
-	{{ range $pageblock := .Site.Params.pageblocks }}
-    	{{ range $sectiontype, $element := $pageblock }}
+	{{ range $section := .Site.Params.sections }}
+    	{{ range $sectiontype, $element := $section }}
     		{{ $path := $sectiontype | printf "%s.html" }}
     		{{ $sectiondata := index $.Site.Data.data $sectiontype }}
     		{{ $blockdata := index $sectiondata $element }}
