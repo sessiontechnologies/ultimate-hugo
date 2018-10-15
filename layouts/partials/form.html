@@ -6,6 +6,7 @@
 {{ if .backgroundimage }}
    {{ $styling = .backgroundimage | printf "%s background: url(%s) no-repeat; background-size: cover;" $styling }}
 {{ end }}
+
 <section class="form" style="{{ $styling | safeCSS }}">
   <div class="container">
     <div class="row">
@@ -34,7 +35,7 @@
           <div class="contact-form">
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;">
             </iframe>
-            <form action="{{ .action }}" method="post" target="hidden_iframe">
+            <form id="contact-form" action="{{ .action }}" method="post" target="hidden_iframe">
               <div class="block">
                 <div class="row">
                   <div class="col-md-6">
@@ -47,10 +48,7 @@
                     <div class="form-group-2">
                       <textarea class="form-control" rows="3" name="{{ .messageid }}" placeholder="{{ .message }}"></textarea>
                     </div>
-                    {{ if $.Site.Params.integrations.recapcha }}
-                      <div class="g-recaptcha" data-sitekey="{{ $.Site.Params.integrations.recapcha}}"></div>
-                    {{ end }}
-                    <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit" onsubmit="grecaptcha.execute('{{ $.Site.Params.integrations.recapcha }}', {action: 'homepage'});">{{ .button }}</button>
+                    <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit">{{ .button }}</button>
                   </div>
               </div>
             </form>

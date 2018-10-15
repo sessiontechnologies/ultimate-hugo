@@ -40,14 +40,3 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/ultimate.css" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" />
 <!-- END head.html -->
-
-<!-- ReCapcha -->
-{{ if $.Site.Params.integrations.recapcha }}
-  <script src='https://www.google.com/recaptcha/api.js?render={{ .Site.Params.integrations.recapcha }}'></script>
-<!--   <script>
-	grecaptcha.ready(function() {
-		
-	});
-  </script>
- -->
- {{ end }}
