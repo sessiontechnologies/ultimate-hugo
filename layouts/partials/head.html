@@ -44,4 +44,10 @@
 <!-- ReCapcha -->
 {{ if $.Site.Params.integrations.recapcha }}
   <script src='https://www.google.com/recaptcha/api.js?render={{ .Site.Params.integrations.recapcha }}'></script>
-{{ end }}
+<!--   <script>
+	grecaptcha.ready(function() {
+		
+	});
+  </script>
+ -->
+ {{ end }}

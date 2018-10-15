@@ -50,7 +50,7 @@
                     {{ if $.Site.Params.integrations.recapcha }}
                       <div class="g-recaptcha" data-sitekey="{{ $.Site.Params.integrations.recapcha}}"></div>
                     {{ end }}
-                    <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit">{{ .button }}</button>
+                    <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit" onsubmit="grecaptcha.execute('{{ $.Site.Params.integrations.recapcha }}', {action: 'homepage'});">{{ .button }}</button>
                   </div>
               </div>
             </form>
