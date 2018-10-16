@@ -9,12 +9,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-6">
-      <h2 class="text-uppercase">{{ .title }}</h2>
+      <h2 class="text-uppercase">{{ i18n .title_i18n }}</h2>
       <div>
-      	{{ .content | markdownify }}
+      	{{ i18n .content_i18n | markdownify }}
       </div>
       {{ with .button }}
-      	<a href="{{ .url }}" class="btn btn-call-to-action">{{ .caption }}</a>
+      	<a href="{{ .url }}" class="btn btn-call-to-action">{{ i18n .caption_i18n }}</a>
       {{ end }}
     </div>
   </div>

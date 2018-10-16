@@ -13,21 +13,21 @@
       <div class="col-md-12">
         <div class="block">
           <div class="section-title">
-            <h2>{{ .title }}</h2>
-            <p>{{ .subtitle }}</p>
+            <h2>{{ i18n .title_i18n }}</h2>
+            <p>{{ i18n .subtitle_i18n }}</p>
           </div>
           <div class="modal" id="formSubmitted">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h4 class="modal-title">Form submitted!</h4>
+                  <h4 class="modal-title">{{ i18n .success_i18n }}</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                  Thanks for submitting the form; we'll get back to you shortly.
+                  {{ i18n .success_text_i18n }}
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">{{ i18n .close_i18n }}</button>
                 </div>
               </div>
             </div>
@@ -40,15 +40,15 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="{{ .nameid }}" placeholder="{{ .name }}">
+                      <input type="text" class="form-control" name="{{ .nameid }}" placeholder="{{ i18n .name_i18n }}">
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control" name="{{ .emailid }}" placeholder="{{ .email }}">
+                      <input type="text" class="form-control" name="{{ .emailid }}" placeholder="{{ i18n .email_i18n }}">
                     </div>
                     <div class="form-group-2">
-                      <textarea class="form-control" rows="3" name="{{ .messageid }}" placeholder="{{ .message }}"></textarea>
+                      <textarea class="form-control" rows="3" name="{{ .messageid }}" placeholder="{{ i18n .message_i18n }}"></textarea>
                     </div>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit">{{ .button }}</button>
+                    <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit">{{ i18n .button_i18n }}</button>
                   </div>
                 </div>
               </div>

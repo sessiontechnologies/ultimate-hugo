@@ -10,8 +10,7 @@
 	{{ range $section := .Site.Params.homepage.sections }}
     	{{ range $sectiontype, $element := $section }}
     		{{ $path := $sectiontype | printf "%s.html" }}
-    		{{ $langdata := printf "sections-%s" $.Site.Language }}
-    		{{ $sectionlang := index $.Site.Data $langdata }}
+    		{{ $sectionlang := index $.Site.Data "sections" }}
     		{{ $sectiondata := index $sectionlang $sectiontype }}
     		{{ $blockdata := index $sectiondata $element }}
     		{{ partial $path $blockdata }}

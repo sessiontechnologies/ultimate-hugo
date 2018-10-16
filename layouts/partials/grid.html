@@ -12,8 +12,8 @@
       <div class="col-md-12 col-sm-12">
         <div class="block">
           <div class="section-title">
-            <h2>{{ .title }}</h2>
-            <p>{{ .subtitle }}</p>
+            <h2>{{ i18n .title_i18n }}</h2>
+            <p>{{ i18n .subtitle_i18n }}</p>
           </div>
         </div>
       </div>
@@ -24,8 +24,8 @@
       <div class="col-sm-6 col-md-3">
         <div class="grid-item">
           <ion-icon name="{{ .ionicon }}"></ion-icon>
-          <h4>{{ .name }}</h4>
-          <p>{{ .text }}</p>
+          <h4>{{ i18n .name_i18n }}</h4>
+          <p>{{ i18n .text_i18n }}</p>
         </div>
       </div>
       {{ end }}

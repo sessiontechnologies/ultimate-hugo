@@ -12,15 +12,15 @@
       <div class="col-md-7 col-sm-12">
         <div class="block">
           <div class="section-title">
-            <h2>{{ .title }}</h2>
-            <p>{{ .subtitle }}</p>
+            <h2>{{ i18n .title_i18n }}</h2>
+            <p>{{ i18n .subtitle_i18n }}</p>
           </div>
-          <p>{{ .paragraph  | safeHTML }}</p>
+          <p>{{ i18n .paragraph_i18n  | safeHTML }}</p>
         </div>
       </div>
       <div class="col-md-5 col-sm-12">
         <div class="block">
-          <img src="{{ .image }}" alt="Img">
+          <img src="{{ .image }}" alt="{{ .image }}">
         </div>
       </div>
     </div>

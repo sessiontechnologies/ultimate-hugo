@@ -12,9 +12,9 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-2">
         <div class="block">
-          <h1 class="animated fadeInUp text-uppercase">{{ .title }}</h1>
-          <h2 class="animated fadeInUp">{{ .subtitle | safeHTML }}</h2>
-          <p class="animated fadeInUp">{{ .paragraph | safeHTML }}</p>
+          <h1 class="animated fadeInUp text-uppercase">{{ i18n .title_i18n }}</h1>
+          <h2 class="animated fadeInUp">{{ i18n .subtitle_i18n | safeHTML }}</h2>
+          <p class="animated fadeInUp">{{ i18n .paragraph_i18n | safeHTML }}</p>
         </div>
       </div>
     </div>
