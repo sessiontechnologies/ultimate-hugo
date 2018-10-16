@@ -9,7 +9,7 @@
 	{{ end }}
 	{{ range $section := .Site.Params.homepage.sections }}
     	{{ range $sectiontype, $element := $section }}
-    		{{ $path := $sectiontype | printf "%s.html" }}
+    		{{ $path := $sectiontype | printf "sections/%s.html" }}
     		{{ $sectionlang := index $.Site.Data "sections" }}
     		{{ $sectiondata := index $sectionlang $sectiontype }}
     		{{ $blockdata := index $sectiondata $element }}

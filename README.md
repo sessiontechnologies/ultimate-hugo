@@ -1,7 +1,7 @@
 # Ultimate Hugo Theme
 
 Ultimate is a Hugo theme developed by [Session Technologies](https://session.it) which focuses on the following aspects:
-- Editors peace of mind: deliver a simple workflow for editors to change contents, building an intuitive folder and file structure
+- Editors peace of mind: deliver a simple workflow for editors to change contents, using an intuitive folder and file structure
 - Layout flexibility: allow editors to compose their pages using pre-defined section layouts in different orders, across all website pages
 - Feature-rich: Multi-language, simple integration with Google Analytics, Jivo chat, Privy and more
 - Documentation and tutorials on how to go live with a website built with the Ultimate theme

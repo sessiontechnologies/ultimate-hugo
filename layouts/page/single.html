@@ -12,7 +12,7 @@
 			{{ $section := split . "|" }}
 			{{ $sectiontype := index $section 0 }}
 			{{ $sectionname := index $section 1 }}
-			{{ $path := $sectiontype | printf "%s.html" }}
+			{{ $path := $sectiontype | printf "sections/%s.html" }}
 			{{ $sectionlang := index $.Site.Data "sections" }}
 			{{ $sectiondata := index $sectionlang $sectiontype }}
 			{{ $blockdata := index $sectiondata $sectionname }}
