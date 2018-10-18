@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Metadata -->
-<meta name="author" content="{{ .Site.Params.meta.author }}">
-<meta property="og:description" content="{{ .Site.Params.meta.description }}">
+<meta name="author" content="{{ i18n "meta_author" }}">
+<meta property="og:description" content="{{ i18n "meta_description" }}">
 <meta property="og:url" content="{{ .Site.BaseURL }}">
 <meta property="og:title" content="{{ .Site.Title }}">
 <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
 <meta property="og:locale" content="{{ .Site.LanguageCode }}">
 
 <meta name="twitter:title" content="{{ .Site.Title }}">
-<meta name="twitter:description" content="{{ .Site.Params.meta.description }}">
+<meta name="twitter:description" content="{{ i18n "meta_description" }}">
 <meta name="twitter:card" content="summary"> 
 
 <meta property="st:title" content="{{ .Site.Title }}">
