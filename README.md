@@ -1,4 +1,3 @@
-
 # TODO
 - Add about page in the menu
 - Safe code in the header if there's 1 language
@@ -15,7 +14,6 @@
 - [Heading](#heading-2)
   * [Sub-heading](#sub-heading-2)
     + [Sub-sub-heading](#sub-sub-heading-2)
-
 
 # Ultimate Hugo Theme
 
