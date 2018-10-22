@@ -154,3 +154,4 @@ The command will create a file in `content/index.md`, with some initial content.
 - Using forestry.io or any other CMS that allows full content editing
 - Theme extensibility (ie "registering" new HTML layout pages)
 - LinkedIN blogpost - "building static website in a post-wordpress era"
+
