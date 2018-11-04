@@ -9,6 +9,11 @@
 <section class="simple" style="{{ $styling | safeCSS }}">
   <div class="container">
     <div class="row">
+      <div class="col-md-5 col-sm-12">
+        <div class="block centered">
+          <img src="{{ .image }}" alt="{{ .image }}">
+        </div>
+      </div>
       <div class="col-md-7 col-sm-12">
         <div class="block">
           <div class="section-title">
@@ -16,11 +21,6 @@
             <p>{{ i18n .subtitle_i18n }}</p>
           </div>
           <p>{{ i18n .paragraph_i18n  | safeHTML }}</p>
-        </div>
-      </div>
-      <div class="col-md-5 col-sm-12">
-        <div class="block centered">
-          <img src="{{ .image }}" alt="{{ .image }}">
         </div>
       </div>
     </div>
