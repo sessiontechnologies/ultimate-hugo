@@ -9,11 +9,13 @@
 <section class="simple" style="{{ $styling | safeCSS }}">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 col-sm-12">
-        <div class="block centered">
-          <img src="{{ .image }}" alt="{{ .image }}">
+      {{ if .imageside != "right" }}
+        <div class="col-md-5 col-sm-12">
+          <div class="block centered">
+            <img src="{{ .image }}" alt="{{ .image }}">
+          </div>
         </div>
-      </div>
+      {{ end }}
       <div class="col-md-7 col-sm-12">
         <div class="block">
           <div class="section-title">
@@ -23,6 +25,13 @@
           <p>{{ i18n .paragraph_i18n  | safeHTML }}</p>
         </div>
       </div>
+      {{ if .imageside == "right" }}
+        <div class="col-md-5 col-sm-12">
+          <div class="block centered">
+            <img src="{{ .image }}" alt="{{ .image }}">
+          </div>
+        </div>
+      {{ end }}
     </div>
   </div>
 </section>
