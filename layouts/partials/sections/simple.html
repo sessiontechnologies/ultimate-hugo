@@ -9,7 +9,7 @@
 <section class="simple" style="{{ $styling | safeCSS }}">
   <div class="container">
     <div class="row">
-      {{ if .imageside != "right" }}
+      {{ if ne .imageside "right" }}
         <div class="col-md-5 col-sm-12">
           <div class="block centered">
             <img src="{{ .image }}" alt="{{ .image }}">
@@ -25,7 +25,7 @@
           <p>{{ i18n .paragraph_i18n  | safeHTML }}</p>
         </div>
       </div>
-      {{ if .imageside == "right" }}
+      {{ if eq .imageside "right" }}
         <div class="col-md-5 col-sm-12">
           <div class="block centered">
             <img src="{{ .image }}" alt="{{ .image }}">
