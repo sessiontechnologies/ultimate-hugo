@@ -43,6 +43,13 @@
   <script type='text/javascript'> var _d_site = _d_site || '{{ .Site.Params.integrations.privyid }}'; </script>
   <script src='https://widget.privy.com/assets/widget.js'></script>
 {{ end }}
+
+{{ if .Site.Params.recapcha }}
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+{{ end }}
+
+
+
 <!-- End Privy -->
 
 <!-- END js-libs.html -->
