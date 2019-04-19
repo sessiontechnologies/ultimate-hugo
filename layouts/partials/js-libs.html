@@ -18,33 +18,33 @@
 <script src="{{ .Site.BaseURL }}js/ultimate.js"></script>
 
 <!-- Google Analytics -->
-{{ if .Site.gacode }}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.gacode }}"></script>
+{{ if isset .Site.Params "gacode" }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.gacode }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '{{ .Site.gacode }}');
+    gtag('config', '{{ .Site.Params.gacode }}');
   </script>
 {{ end }}
 <!-- End Google Analytics -->
 
 <!-- JIVO Chat -->
-{{ if .Site.jivoid }}
+{{ if isset .Site.Params "jivoid" }}
   <script>
-  (function(){ var widget_id = '{{ .Site.jivoid }}';var d=document;var w=window;function l(){
+  (function(){ var widget_id = '{{ .Site.Params.jivoid }}';var d=document;var w=window;function l(){
   var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 {{ end }}
 <!-- End JIVO Chat -->
 
 <!-- Privy - https://dashboard.privy.com/settings/widget -->
-{{ if .Site.privyid }}
-  <script type='text/javascript'> var _d_site = _d_site || '{{ .Site.privyid }}'; </script>
+{{ if isset .Site.Params "privyid" }}
+  <script type='text/javascript'> var _d_site = _d_site || '{{ .Site.Params.privyid }}'; </script>
   <script src='https://widget.privy.com/assets/widget.js'></script>
 {{ end }}
 
-{{ if .Site.recapcha }}
+{{ if isset .Site.Params "recapcha" }}
   <script src='https://www.google.com/recaptcha/api.js'></script>
 {{ end }}
 
