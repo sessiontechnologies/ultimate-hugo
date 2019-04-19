@@ -51,9 +51,9 @@
                     <button class="btn btn-default" data-toggle="modal" data-target="#formSubmitted" type="submit">{{ i18n .button_i18n }}</button>
                   </div>
                 </div>
-                {{ if .Site.Params.recapcha }}
+                {{ if .Site.Params.integrations.recapcha }}
                   <div class="row">
-                    <div class="g-recaptcha" data-sitekey="{{ .Site.Params.recapcha }}"></div>
+                    <div class="g-recaptcha" data-sitekey="{{ .Site.Params.integrations.recapcha }}"></div>
                   </div>
                 {{ end }}
               </div>
