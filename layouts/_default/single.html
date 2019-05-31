@@ -18,8 +18,9 @@
 			{{ $blockdata := index $sectiondata $sectionname }}
 			{{ partial $path $blockdata }}
 		{{ end }}
-
-		{{ .Content }}
+		<div class="page-content">
+			{{ .Content }}
+		</div>
 
 		{{ if $.Site.Data.sections.footer }}
 			{{ partial "footer.html" $.Site.Data.sections.footer }}
