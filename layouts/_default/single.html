@@ -19,6 +19,8 @@
 			{{ partial $path $blockdata }}
 		{{ end }}
 
+		{{ .Content }}
+
 		{{ if $.Site.Data.sections.footer }}
 			{{ partial "footer.html" $.Site.Data.sections.footer }}
 		{{ end }}
