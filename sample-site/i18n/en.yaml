@@ -6,7 +6,7 @@
   translation: "Description"
 
 - id: footer_message
-  translation: "Built with <a target='_blank' href='https://github.com/sessiontechnologies/ultimate-hugo'>Hugo Ultimate theme</a>"
+  translation: "Come and say <a target='_blank' href='mailto:hi@session.it'>hi@session.it</a>"
 
 - id: slider1_title
   translation: "Title"
